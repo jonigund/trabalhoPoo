@@ -34,8 +34,7 @@ public class ValidaJogada {
 	}
 	
 	
-		
-
+	
 	private static boolean fimDeJogo(char[][] tabuleiro) {
 				
 		if ((tabuleiro[0][0] =='X' && tabuleiro[0][1] =='X' && tabuleiro[0][2] =='X') ||
@@ -68,8 +67,6 @@ public class ValidaJogada {
 				return true;
 				}
 				
-		
-
 		
 		for (int i = 0; i <tabuleiro.length; i++) {
 			for (int j = 0; j < tabuleiro[i].length; j++) {
@@ -131,12 +128,12 @@ public class ValidaJogada {
 	
 	
 	
- 	public static void imprimeTela(char[][] tabuleiro) {
-		System.out.println("1" + "|" + "2" + "|" + "3      " + tabuleiro[0][0] + "|" + tabuleiro[0][1] + "|" + tabuleiro[0][2] );
-		System.out.println("-+-+-      " + "-+-+-");
-		System.out.println("4" + "|" + "5" + "|" + "6      " +tabuleiro[1][0] + "|" + tabuleiro[1][1] + "|" + tabuleiro[1][2] );
-		System.out.println("-+-+-      " + "-+-+-");
-		System.out.println("7" + "|" + "8" + "|" + "9      " +tabuleiro[2][0] + "|" + tabuleiro[2][1] + "|" + tabuleiro[2][2] );
+ 	private static void imprimeTela(char[][] tabuleiro) {
+		System.out.println("1" + "|" + "2" + "|" + "3         " + tabuleiro[0][0] + "|" + tabuleiro[0][1] + "|" + tabuleiro[0][2] );
+		System.out.println("-+-+-         " + "-+-+-");
+		System.out.println("4" + "|" + "5" + "|" + "6         " +tabuleiro[1][0] + "|" + tabuleiro[1][1] + "|" + tabuleiro[1][2] );
+		System.out.println("-+-+-         " + "-+-+-");
+		System.out.println("7" + "|" + "8" + "|" + "9         " +tabuleiro[2][0] + "|" + tabuleiro[2][1] + "|" + tabuleiro[2][2] );
 	}	
 
 	
