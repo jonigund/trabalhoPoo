@@ -3,10 +3,13 @@ package jogoDaVelha;
 import java.util.Random;
 import jogoDaVelha.Validador;
 
+
+
+
 public class Computador {
 	
 
-	private static void computadorA (char[][] tabuleiro) {
+	public static void computadorA (char[][] tabuleiro) {
 		Random randomico = new Random();	
 		int jogadaComputador;
 		while (true) {
@@ -25,3 +28,4 @@ public class Computador {
 	
 
 }
+

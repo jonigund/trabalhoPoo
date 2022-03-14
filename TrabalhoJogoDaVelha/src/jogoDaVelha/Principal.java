@@ -1,12 +1,10 @@
 package jogoDaVelha;
 
-import java.util.Random;
 import java.util.Scanner;
 import jogoDaVelha.Jogador;
 import jogoDaVelha.Tabuleiro;
 import jogoDaVelha.Computador;
 import jogoDaVelha.Validador;
-
 
 
 
@@ -33,13 +31,13 @@ public class Principal extends Tabuleiro{
 		while (true) {
 			Tabuleiro.imprimeTela(tabuleiro);;
 			jogadaHumano(tabuleiro, scanner);
-			if (fimDeJogo(tabuleiro)) {
+			if (Validador.validate.fimDeJogo(tabuleiro)) {
 				break;
 			}
 		
 			
 			jogadaPc(tabuleiro);
-			if (fimDeJogo(tabuleiro)) {
+			if (Validador.validate.fimDeJogo(tabuleiro)) {
 				break;
 			}
 		
@@ -59,69 +57,11 @@ public class Principal extends Tabuleiro{
 		}
 	}
 	
-	
-	
-	private static boolean fimDeJogo (char[][] tabuleiro) {
-				
-		if ((tabuleiro[0][0] =='X' && tabuleiro[0][1] =='X' && tabuleiro[0][2] =='X') ||
-			(tabuleiro[1][0] =='X' && tabuleiro[1][1] =='X' && tabuleiro[1][2] =='X') ||
-			(tabuleiro[2][0] =='X' && tabuleiro[2][1] =='X' && tabuleiro[2][2] =='X') ||
-			
-			(tabuleiro[0][0] =='X' && tabuleiro[1][0] =='X' && tabuleiro[2][0] =='X') ||
-			(tabuleiro[0][1] =='X' && tabuleiro[1][1] =='X' && tabuleiro[2][1] =='X') ||
-			(tabuleiro[0][2] =='X' && tabuleiro[1][2] =='X' && tabuleiro[2][2] =='X') ||
-			
-			(tabuleiro[0][0] =='X' && tabuleiro[1][1] =='X' && tabuleiro[2][2] =='X') ||
-			(tabuleiro[0][2] =='X' && tabuleiro[1][1] =='X' && tabuleiro[2][0] =='X')) {
-			imprimeTela(tabuleiro);
-			System.out.println("Você venceu!");
-			return true;
-			}
 		
-		else if ((tabuleiro[0][0] =='O' && tabuleiro[0][1] =='O' && tabuleiro[0][2] =='O') ||
-				(tabuleiro[1][0] =='O' && tabuleiro[1][1] =='O' && tabuleiro[1][2] =='O') ||
-				(tabuleiro[2][0] =='O' && tabuleiro[2][1] =='O' && tabuleiro[2][2] =='O') ||
-				
-				(tabuleiro[0][0] =='O' && tabuleiro[1][0] =='O' && tabuleiro[2][0] =='O') ||
-				(tabuleiro[0][1] =='O' && tabuleiro[1][1] =='O' && tabuleiro[2][1] =='O') ||
-				(tabuleiro[0][2] =='O' && tabuleiro[1][2] =='O' && tabuleiro[2][2] =='O') ||
-				
-				(tabuleiro[0][0] =='O' && tabuleiro[1][1] =='O' && tabuleiro[2][2] =='O') ||
-				(tabuleiro[0][2] =='O' && tabuleiro[1][1] =='O' && tabuleiro[2][0] =='O')) {
-				imprimeTela(tabuleiro);
-				System.out.println("Game Over, o computador venceu!");
-				return true;
-				}
-				
-		
-		for (int i = 0; i <tabuleiro.length; i++) {
-			for (int j = 0; j < tabuleiro[i].length; j++) {
-				if (tabuleiro[i][j] == ' ') {
-					return false;
-				}
-			}
-		}
-		imprimeTela(tabuleiro);
-		System.out.println("O jogo empatou!");
-		
-		
-		return false;
-		
-	}
-
-	
 
 	private static void jogadaPc(char[][] tabuleiro) {
-		Random randomico = new Random();	
-		int jogadaComputador;
-		while (true) {
-			jogadaComputador = randomico.nextInt(9)+1;
-			if (Validador.validate.jogadaValida(tabuleiro, jogadaComputador)) {
-				break;
-			}
-			}
-		System.out.println("O Computador escolheu a posição "+ jogadaComputador);
-		Validador.validate.posicionador(tabuleiro, Integer.toString(jogadaComputador), 'O');
+		Computador.computadorA(tabuleiro);
+		
 	}
 		
 	

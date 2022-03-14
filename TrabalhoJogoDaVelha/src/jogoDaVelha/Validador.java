@@ -1,6 +1,5 @@
 package jogoDaVelha;
 
-import java.util.Random;
 import java.util.Scanner;
 
 public interface Validador {
@@ -11,7 +10,7 @@ public interface Validador {
 
 
 			
-	private static boolean fimDeJogo (char[][] tabuleiro) {
+	public static boolean fimDeJogo (char[][] tabuleiro) {
 					
 		if ((tabuleiro[0][0] =='X' && tabuleiro[0][1] =='X' && tabuleiro[0][2] =='X') ||
 			(tabuleiro[1][0] =='X' && tabuleiro[1][1] =='X' && tabuleiro[1][2] =='X') ||
@@ -53,7 +52,7 @@ public interface Validador {
 			}
 			imprimeTela(tabuleiro);
 			System.out.println("O jogo empatou!");
-						
+			System.exit(0);						
 			return false;
 			
 		}
