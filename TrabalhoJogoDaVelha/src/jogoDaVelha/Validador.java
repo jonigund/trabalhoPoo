@@ -6,8 +6,6 @@ public interface Validador {
 
 	public class validate extends Tabuleiro{
 		static Scanner scanner = new Scanner(System.in);
-		
-
 
 			
 	public static boolean fimDeJogo (char[][] tabuleiro) {

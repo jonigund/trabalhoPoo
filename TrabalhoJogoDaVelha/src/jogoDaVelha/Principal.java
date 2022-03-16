@@ -3,13 +3,16 @@ package jogoDaVelha;
 import java.util.Scanner;
 import jogoDaVelha.Jogador;
 import jogoDaVelha.Tabuleiro;
-import jogoDaVelha.Computador;
+import jogoDaVelha.ComputadorA;
+import jogoDaVelha.ComputadorB;
+import jogoDaVelha.ComputadorC;
 import jogoDaVelha.Validador;
 
 
 
 public class Principal extends Tabuleiro{
 	static Scanner scanner = new Scanner(System.in);
+	static String verEscolha;
 
 
 	
@@ -18,11 +21,7 @@ public class Principal extends Tabuleiro{
 		configInicio();
 		
 		alternador();
-		
-		System.out.println("_______________________________________________________________");
-		
-		//scanner.close();
-		
+			
 	}
 
 
@@ -33,6 +32,7 @@ public class Principal extends Tabuleiro{
 			jogadaHumano(tabuleiro, scanner);
 			if (Validador.validate.fimDeJogo(tabuleiro)) {
 				break;
+
 			}
 		
 			
@@ -41,26 +41,54 @@ public class Principal extends Tabuleiro{
 				break;
 			}
 		
-		}
+		}				
+		System.exit(0);
+
 	}
 
 
 
-	private static void configInicio() {
+	public static void configInicio() {
 		String nivel;
-		System.out.println("Selecione o nível de dificuldade digitando  A , B ou C: ");
+		
+		System.out.println("Selecione o nível de dificuldade digitando  a , b ou c: ");
 		nivel = scanner.nextLine();
 		switch(nivel) {
-		case "A":
-			System.out.println("acerto miseravi");
+		case "a":
+			System.out.println("Você escolheu 'a', o nível mais fácil!");
+			verEscolha = "a";
 			break;
+		case "b":
+			System.out.println("Você escolheu 'b', agora vai ficar mais difícil!");
+			verEscolha = "b";
+			break;
+		case "c":
+			System.out.println("\"Você escolheu 'c', o nível dos mestres!");
+			verEscolha = "c";
+			break;
+		default:
+			System.out.println("Opção não válida!, ");
+			configInicio();
+			break;
+			
 		}
 	}
 	
 		
 
-	private static void jogadaPc(char[][] tabuleiro) {
-		Computador.computadorA(tabuleiro);
+	public static void jogadaPc(char[][] tabuleiro) {
+		switch(verEscolha) {
+		case "a":
+			ComputadorA.computadorA(tabuleiro);
+		break;
+		case "b":
+			ComputadorB.computadorB(tabuleiro);
+		break;
+		case "c":
+			ComputadorC.computadorC(tabuleiro);;
+		break;
+		
+		}
 		
 	}
 		
