@@ -50,7 +50,7 @@ public interface Validador {
 			}
 			imprimeTela(tabuleiro);
 			System.out.println("O jogo empatou!");
-			System.exit(0);						
+					
 			return false;
 			
 		}

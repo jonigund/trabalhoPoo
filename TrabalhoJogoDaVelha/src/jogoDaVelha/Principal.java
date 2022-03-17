@@ -22,6 +22,7 @@ public class Principal extends Tabuleiro{
 		
 		alternador();
 			
+
 	}
 
 
@@ -42,7 +43,7 @@ public class Principal extends Tabuleiro{
 			}
 		
 		}				
-		System.exit(0);
+
 
 	}
 
