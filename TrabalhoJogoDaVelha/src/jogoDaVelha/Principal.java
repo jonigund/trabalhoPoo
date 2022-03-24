@@ -1,13 +1,6 @@
 package jogoDaVelha;
 
 import java.util.Scanner;
-import jogoDaVelha.Jogador;
-import jogoDaVelha.Tabuleiro;
-import jogoDaVelha.ComputadorA;
-import jogoDaVelha.ComputadorB;
-import jogoDaVelha.ComputadorC;
-import jogoDaVelha.Validador;
-
 
 
 public class Principal extends Tabuleiro{
@@ -15,16 +8,13 @@ public class Principal extends Tabuleiro{
 	static String verEscolha;
 
 
-	
 	public static void main(String[] args) {
-					
+			
 		configInicio();
 		
 		alternador();
-			
 
 	}
-
 
 
 	private static void alternador() {
@@ -33,7 +23,6 @@ public class Principal extends Tabuleiro{
 			jogadaHumano(tabuleiro, scanner);
 			if (Validador.validate.fimDeJogo(tabuleiro)) {
 				break;
-
 			}
 		
 			
@@ -41,19 +30,16 @@ public class Principal extends Tabuleiro{
 			if (Validador.validate.fimDeJogo(tabuleiro)) {
 				break;
 			}
-		
 		}				
-
-
 	}
 
 
 
 	public static void configInicio() {
 		String nivel;
-		
 		System.out.println("Selecione o nível de dificuldade digitando  a , b ou c: ");
 		nivel = scanner.nextLine();
+		
 		switch(nivel) {
 		case "a":
 			System.out.println("Você escolheu 'a', o nível mais fácil!");
@@ -71,7 +57,6 @@ public class Principal extends Tabuleiro{
 			System.out.println("Opção não válida!, ");
 			configInicio();
 			break;
-			
 		}
 	}
 	
@@ -88,9 +73,7 @@ public class Principal extends Tabuleiro{
 		case "c":
 			ComputadorC.computadorC(tabuleiro);;
 		break;
-		
 		}
-		
 	}
 		
 	
@@ -98,13 +81,7 @@ public class Principal extends Tabuleiro{
 	public static void jogadaHumano (final char[][] tabuleiro, Scanner scanner) {
 		Jogador.jogada();
 		Validador.validate.posicionador(tabuleiro, Jogador.escolha, 'X');
-		
 	}
-
-
-
-	
-
 }
 	
 	

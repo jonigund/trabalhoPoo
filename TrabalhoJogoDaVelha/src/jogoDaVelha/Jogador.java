@@ -1,8 +1,7 @@
 package jogoDaVelha;
 
+
 import java.util.Scanner;
-import jogoDaVelha.Tabuleiro;
-import jogoDaVelha.Validador;
 
 
 public class Jogador{

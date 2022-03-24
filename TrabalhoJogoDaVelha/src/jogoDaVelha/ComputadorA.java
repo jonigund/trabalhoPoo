@@ -1,9 +1,6 @@
 package jogoDaVelha;
 
 import java.util.Random;
-import jogoDaVelha.Tabuleiro;
-import jogoDaVelha.Validador;
-
 
 
 public class ComputadorA extends Computador {

@@ -1,7 +1,6 @@
 package jogoDaVelha;
 
-import jogoDaVelha.Tabuleiro;
-import jogoDaVelha.Validador;
+
 
 public class ComputadorB extends Computador {
 
