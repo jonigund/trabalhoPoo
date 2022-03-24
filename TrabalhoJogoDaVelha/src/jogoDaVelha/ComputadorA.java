@@ -16,6 +16,7 @@ public class ComputadorA extends Computador {
 				}
 				}
 			System.out.println("O Computador escolheu a posição "+ rotinaA);
+			System.out.println("");
 			Validador.validate.posicionador(tabuleiro, Integer.toString(rotinaA), 'O');
 
 		}
